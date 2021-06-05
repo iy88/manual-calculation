@@ -1,12 +1,12 @@
-let additionMap: { [k: string]: { [k: string]: { carry: boolean, res: string, R?: { res: string, r: string } } } } = {};
-for (let i = 0; i < 10; i++) {
-  additionMap[`${i}`] = { '0': { carry: false, res: `${i}` } };
-  for (let j = 1; j < 10; j++) {
-    let res = i + j;
-    additionMap[`${i}`][`${j}`] = { carry: res > 9 ? true : false, res: `${res}`, R: res > 9 ? { res: `${res - 10}`, r: `1` } : undefined };
-  }
-}
-
+// let additionMap: { [k: string]: { [k: string]: { carry: boolean, res: string, R?: { res: string, r: string } } } } = {};
+// for (let i = 0; i < 10; i++) {
+//   additionMap[`${i}`] = { '0': { carry: false, res: `${i}` } };
+//   for (let j = 1; j < 10; j++) {
+//     let res = i + j;
+//     additionMap[`${i}`][`${j}`] = { carry: res > 9 ? true : false, res: `${res}`, R: res > 9 ? { res: `${res - 10}`, r: `1` } : undefined };
+//   }
+// }
+import additionMap from "./data/additionmap";
 function addition(a: string, b: string) {
   if (!(isNaN(Number(a)) || isNaN(Number(b)))) {
     let aa: string[] = a.split('');
