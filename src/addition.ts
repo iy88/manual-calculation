@@ -11,6 +11,13 @@ function addition(a: string, b: string) {
   if (!(isNaN(Number(a)) || isNaN(Number(b)))) {
     let aa: string[] = a.split('');
     let ba: string[] = b.split('');
+    while (aa.length - (aa.indexOf('.') + 1) !== ba.length - (ba.indexOf('.') + 1)) {
+      if (aa.length - (aa.indexOf('.') + 1) > ba.length - (ba.indexOf('.') + 1)) {
+        ba.push('0');
+      } else {
+        aa.push('0');
+      }
+    }
     let maxLength = Math.max(aa.length, ba.length) + 1;
     while (aa.length !== maxLength) {
       aa.unshift('0');
